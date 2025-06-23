@@ -42,7 +42,7 @@ function App() {
         <Routes>
           {/* Public routes with header/footer */}
           <Route path="/" element={<RootLayout />}>
-            <Route index element={<LandingPage />} />
+            <Route path="frontend" element={<LandingPage />} />
             <Route path="signup" element={<SignupPage />} />
             <Route path="login" element={<LoginPage />} />
             <Route path="jobs" element={<ApplyForJobPage />} />
