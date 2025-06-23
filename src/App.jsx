@@ -38,7 +38,7 @@ import Recruiter_Hackathons from "./components/recruiter/Recruiter_Hackathons";
 function App() {
   return (
     <AuthContex>
-      <Router basename="/frontend">
+      <Router basename="/frontend/">
         <Toaster position="top-center" richColors />
         <Routes>
           {/* Public routes with header/footer */}
