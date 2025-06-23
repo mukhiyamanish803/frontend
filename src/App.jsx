@@ -37,19 +37,18 @@ import Recruiter_Hackathons from "./components/recruiter/Recruiter_Hackathons";
 function App() {
   return (
     <AuthContex>
-      <BrowserRouter>
+      <BrowserRouter basename="/frontend">
         <Toaster position="top-center" richColors />
         <Routes>
           {/* Public routes with header/footer */}
-          <Route path="/" element={<RootLayout />}>
-            <Route path="frontend" element={<LandingPage />} />
+          <Route element={<RootLayout />}>
+            <Route index element={<LandingPage />} />
             <Route path="signup" element={<SignupPage />} />
             <Route path="login" element={<LoginPage />} />
             <Route path="jobs" element={<ApplyForJobPage />} />
             <Route path="jobs/:id/apply" element={<ApplyForJobPage />} />
             <Route path="internship" element={<ApplyForJobPage />} />
             <Route path="hackathons" element={<Hackathons />} />
-            <Route path="*" element={<PageNotFound />} />
           </Route>
 
           {/* Protected Jobseeker routes */}
@@ -109,6 +108,8 @@ function App() {
             <Route path="companies" element={<RegisteredCompanies />} />
             <Route path="dial-codes" element={<DialCode />} />
           </Route>
+
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </AuthContex>
