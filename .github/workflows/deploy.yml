@@ -1,22 +1,8 @@
-name: Deploy App
-
 on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build project
-        run: npm run build
-
-      - name: Deploy project
-        env:
-          GH_TOKEN: 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
-        run: npm run deploy
