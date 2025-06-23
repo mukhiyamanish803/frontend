@@ -16,9 +16,14 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Set Git Identity
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
       - name: Configure Git Identity
         run: |
-          git config --global user.name "Manish Mukhiya"
+          git config --global user.name "mukhiyamanish803"
           git config --global user.email "mukhiyamanish803@gmail.com"
 
       - name: Deploy to GitHub Pages
