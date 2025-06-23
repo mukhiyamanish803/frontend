@@ -7,22 +7,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
       - name: Install dependencies
         run: npm install
 
       - name: Build project
         run: npm run build
 
-      - name: Set Git Identity
-        run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
-
-      - name: Deploy to GitHub Pages
-        env:
-          GH_TOKEN: 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
-        run: |
-          npx gh-pages -d dist -r https://x-access-token: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@github.com/frontend.git
+      - name: deploy project
+        run: npm run deploy
