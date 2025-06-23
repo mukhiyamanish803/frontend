@@ -1,0 +1,25 @@
+name: Deploy App
+
+on:
+  push:
+    branches:
+      - main  # Or change this to 'master' or your deploy branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+
+      - name: ⚙️ Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22.14.0'  # Or whatever version your app uses
+
+      - name: 📦 Install dependencies
+        run: npm install
+
+      - name: 🚀 Run deploy script
+        run: npm run deploy
