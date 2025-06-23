@@ -1,9 +1,7 @@
 name: Deploy App
 
 on:
-  push:
-    branches:
-      - main  # Or change this to 'master' or your deploy branch
+  workflow_dispatch:
 
 jobs:
   deploy:
