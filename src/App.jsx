@@ -110,7 +110,7 @@ function App() {
           </Route>
 
           {/* 404 route */}
-          <Route path="*" element={<PageNotFound />} />
+          <Route path="*" element={<RootLayout />} />
         </Routes>
       </BrowserRouter>
     </AuthContex>
