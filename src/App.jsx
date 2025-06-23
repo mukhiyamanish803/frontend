@@ -42,7 +42,7 @@ function App() {
         <Routes>
           {/* Public routes with header/footer */}
           <Route element={<RootLayout />}>
-            <Route index element={<LandingPage />} />
+            <Route path="/" element={<LandingPage />} />
             <Route path="signup" element={<SignupPage />} />
             <Route path="login" element={<LoginPage />} />
             <Route path="jobs" element={<ApplyForJobPage />} />
@@ -110,7 +110,7 @@ function App() {
           </Route>
 
           {/* 404 route */}
-          <Route path="*" element={<RootLayout />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </AuthContex>
