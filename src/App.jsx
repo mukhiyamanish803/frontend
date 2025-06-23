@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import "./App.css";
 import AuthContex from "./context/AuthContex";
 import RootLayout from "./Layout/RootLayout";
@@ -37,7 +38,7 @@ import Recruiter_Hackathons from "./components/recruiter/Recruiter_Hackathons";
 function App() {
   return (
     <AuthContex>
-      <BrowserRouter basename="/frontend">
+      <Router basename="/frontend">
         <Toaster position="top-center" richColors />
         <Routes>
           {/* Public routes with header/footer */}
@@ -111,7 +112,7 @@ function App() {
 
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </AuthContex>
   );
 }
