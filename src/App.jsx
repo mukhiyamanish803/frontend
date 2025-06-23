@@ -43,12 +43,12 @@ function App() {
           {/* Public routes with header/footer */}
           <Route element={<RootLayout />}>
             <Route index element={<LandingPage />} />
-            <Route path="signup" element={<SignupPage />} />
-            <Route path="login" element={<LoginPage />} />
-            <Route path="jobs" element={<ApplyForJobPage />} />
+            <Route path="signup/" element={<SignupPage />} />
+            <Route path="login/" element={<LoginPage />} />
+            <Route path="jobs/" element={<ApplyForJobPage />} />
             <Route path="jobs/:id/apply" element={<ApplyForJobPage />} />
-            <Route path="internship" element={<ApplyForJobPage />} />
-            <Route path="hackathons" element={<Hackathons />} />
+            <Route path="internship/" element={<ApplyForJobPage />} />
+            <Route path="hackathons/" element={<Hackathons />} />
           </Route>
 
           {/* Protected Jobseeker routes */}
