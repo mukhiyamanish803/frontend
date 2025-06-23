@@ -21,10 +21,8 @@ jobs:
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
 
-      - name: Configure Git Identity
-        run: |
-          git config user.name "mukhiyamanish803"
-          git config user.email "mukhiyamanish803@gmail.com"
-
       - name: Deploy to GitHub Pages
-        run: npm run deploy
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          npx gh-pages -d dist -r https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
