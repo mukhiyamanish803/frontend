@@ -6,18 +6,20 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: 📥 Checkout code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: ⚙️ Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '22.14.0'  # Or whatever version your app uses
-
-      - name: 📦 Install dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: 🚀 Run deploy script
+      - name: Build project
+        run: npm run build
+
+      - name: Configure Git Identity
+        run: |
+          git config --global user.name "mukhiyamanish803"
+          git config --global user.email "mukhiyamanish803@gmail.com"
+
+      - name: Deploy to GitHub Pages
         run: npm run deploy
